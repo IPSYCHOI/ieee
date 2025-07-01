@@ -1,7 +1,8 @@
-
+const {users}=require("../app")
 exports.create = async(req, res, next) => {
     try {
-        // TODO: implement create logic
+        const user = req.body.userName
+        users.push(user)
     } catch (error) {
         next(error)
     }
@@ -10,7 +11,7 @@ exports.create = async(req, res, next) => {
 exports.getAll = async(req, res, next) => {
     try {
         res.status(200).json({
-            msg:"done"
+            users
         })
     } catch (error) {
         next(error)
